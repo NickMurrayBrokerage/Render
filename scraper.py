@@ -13,7 +13,7 @@ def run_async_scrape(url):
 async def scrape_website(url):
     """Scrapes structured property data asynchronously using Playwright."""
     async with async_playwright() as p:
-        browser = await p.firefox.launch(headless=True)
+        browser = await p.firefox.launch(headless=True, executable_path="/usr/bin/firefox")
         page = await browser.new_page()
 
         try:
