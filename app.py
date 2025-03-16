@@ -19,7 +19,7 @@ def scrape():
 
     try:
         # Send URL to scraper.py
-        scraper_response = requests.post("https://render-scraper-1wjr.onrender.com/scrape", json={"url": url})
+        scraper_response = requests.post("http://localhost:5050/scrape", json={"url": url})
 
         if scraper_response.status_code == 200:
             return jsonify(scraper_response.json())  # Return the scraped data to Wix
